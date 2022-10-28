@@ -148,18 +148,18 @@ def test_model(args):
 
 if __name__ == '__main__':
     parser = ArgumentParser()
-    parser.add_argument('--model', default="DABNet", help="model name: Context Guided Network (CGNet)")
+    parser.add_argument('--model', default="ELANet", help="model name: Context Guided Network (CGNet)")
     parser.add_argument('--dataset', default="cityscapes", help="dataset: cityscapes or camvid")
     parser.add_argument('--num_workers', type=int, default=1, help="the number of parallel threads")
     parser.add_argument('--batch_size', type=int, default=1,
                         help=" the batch_size is set to 1 when evaluating or testing")
     parser.add_argument('--checkpoint', type=str,
-                        default="./checkpoint/camvid/DABNetbs16gpu1_trainval/model_1000.pth",
+                        default="",
                         help="use the file to load the checkpoint for evaluating or testing ")
     parser.add_argument('--save_seg_dir', type=str, default="./result/",
                         help="saving path of prediction result")
     parser.add_argument('--best', action='store_true', help="Get the best result among last few checkpoints")
-    parser.add_argument('--save', action='store_true', help="Save the predicted image")
+    parser.add_argument('--save', default=True, help="Save the predicted image")
     parser.add_argument('--cuda', default=True, help="run on CPU or GPU")
     parser.add_argument("--gpus", default="0", type=str, help="gpu ids (default: 0)")
     args = parser.parse_args()
