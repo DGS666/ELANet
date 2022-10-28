@@ -1,6 +1,6 @@
-from model.DABNet import DABNet
+from model.ELANet import ELANet
 
 
 def build_model(model_name, num_classes):
-    if model_name == 'DABNet':
-        return DABNet(classes=num_classes)
+    if model_name == 'ELANet':
+        return ELANet(classes=num_classes)
